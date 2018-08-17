@@ -1,0 +1,81 @@
+#adminmenu li.menu-top:hover .wp-menu-image img, #adminmenu li.wp-has-current-submenu .wp-menu-image img{
+    width: 80%;
+    height: 95%;
+    padding: 5px 0px 0px;
+}
+#adminmenu li.menu-top .wp-menu-image img, #adminmenu li.wp-has-current-submenu .wp-menu-image img{
+    width: 80%;
+    height: 95%;
+    padding: 5px 0px 0px;
+}
+.hide_plugins{
+	width: 50%;
+	float: left;
+    padding: 0px 5px;
+}
+.hide_plugins ul p{
+    margin: 0;
+    padding: 10px 0;
+}
+.hide_plugins h2 {
+    text-align: center;
+    width: 100%;
+    float: left;
+    margin: 0px !important;
+    font-size: 15px;
+    font-weight: 400;
+    padding: 10px 0 !important;
+    color: #000 !important;
+    background: #fff;
+}
+.hide_plugins ul {
+    width: 100%;
+    float: left;
+    margin:0;
+    background-color: #ffffff;
+    border-top: 2px solid #47a79b;
+    padding: 25px 0;
+}
+.hide_plugins ul p.submit {
+    width: 100%;
+    float: left;
+    text-align: center;
+}
+
+
+
+.active_plugins{
+	width: 50%;
+	float: left;
+    padding: 0px 5px;
+}
+.active_plugins ul p{
+    margin: 0;
+    padding: 10px 0;
+}
+.active_plugins h2{
+	text-align: center;
+    width: 100%;
+    float: left;
+    margin: 0px !important;
+    font-size: 15px;
+    font-weight: 400;
+    padding: 10px 0 !important;
+    color: #000 !important;
+    background: #fff;
+}
+.active_plugins ul {
+    width: 100%;
+    float: left;
+    margin:0;
+    background-color: #ffffff;
+    border-top: 2px solid #47a79b;
+    padding: 25px 0;
+}
+.active_plugins ul p.submit {
+    width: 100%;
+    float: left;
+    text-align: center;
+}
+
+

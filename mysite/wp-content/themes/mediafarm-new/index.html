@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>MediaFarm</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/scroll-down.css">
+
+<link rel="stylesheet" type="text/css" href="css/slick.css">
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="js/slick.js"></script>
+
+</head>
+
+<style type="text/css">
+  .nav {
+  height: 110px;
+  width: 100%;
+  background-color: white;
+  position: FIXED;
+  Z-INDEX: 999;
+}
+
+.nav > .nav-header {
+  display: inline;
+}
+
+
+.nav > .nav-btn {
+  display: none;
+}
+
+.nav > .nav-links {
+  display: inline;
+  float: right;
+  font-size: 18px;
+  padding: 0 60px 0 0;
+}
+
+.nav > .nav-links > a {
+    display: inline-block;
+    padding: 25px 0px;
+    text-decoration: none !important;
+    font-size:25px;
+    line-height: 60px;
+    color: rgb(104,119,128);
+    margin: 0 0 0 35px;
+    font-family:opensanshebrew;
+}
+
+.nav > .nav-links > a:hover {
+  background-color:transparent;
+}
+
+.nav > #nav-check {
+  display: none;
+}
+
+@media (max-width:600px) {
+  .nav > .nav-btn {
+    display: inline-block;
+    position: absolute;
+    right: 15px;
+    top: 0px;
+  }
+  
+  .main_slider{MARGIN:0px 0 0 0 !important;}
+
+  .nav > .nav-btn > label {
+    display: inline-block;
+    width: 50px;
+    height: 44px;
+    background-color: #000;
+    padding: 13px;
+    margin: 6px 0;
+  }
+  .nav > .nav-btn > label:hover {
+    background-color:#000;
+  }
+  .nav > .nav-btn > label > span {
+    display: block;
+        width: 25px;
+    height: 7px;
+    border-top: 2px solid #eee;
+  }
+  .left_part_logo{padding: 6px 0px 5px 15px !important;}
+  .nav{height: 65px !important; position: relative !important;}
+
+ .nav > .nav-links > a{ padding: 12px 0px !important; line-height: 22px !important; font-size: 20px !important; margin: 0 15px !important; color: #fff !important;}
+
+  .nav > .nav-links {
+    position: absolute;
+    display: block;
+    width: 100%;
+    background-color: #000;
+    height: 0px;
+    transition: all 0.3s ease-in;
+    overflow-y: hidden;
+    top: 50px;
+    left: 0px;
+    z-index: 999;
+    padding: 0px;
+  }
+  .nav > .nav-links > a {
+    display: block;
+    width:95%;
+  }
+  .nav > #nav-check:not(:checked) + .nav-links {
+    height: 0px;
+  }
+  .nav > #nav-check:checked + .nav-links {
+    height: auto;
+    overflow-y: auto;
+  }
+
+}
+
+
+/*.leftic{
+    transform: rotate(180deg);
+    width: 59px !important;
+}
+
+.rightic{
+    width:59px !important;}
+}
+
+.carousel-fade .carousel-inner .item {
+  transition-property: opacity;
+}
+
+.carousel-fade .carousel-inner .item,
+.carousel-fade .carousel-inner .active.left,
+.carousel-fade .carousel-inner .active.right {
+  opacity: 0;
+  -webkit-transition: opacity 2s ease;
+  -moz-transition: opacity 2s ease;
+  -o-transition: opacity 2s ease;
+  transition: opacity 2s ease;
+
+}
+.carousel-fade .carousel-inner .active,
+.carousel-fade .carousel-inner .next.left,
+.carousel-fade .carousel-inner .prev.right {
+  opacity: 1;
+  -webkit-transition: opacity 2s ease;
+  -moz-transition: opacity 2s ease;
+  -o-transition: opacity 2s ease;
+  transition: opacity 2s ease;
+}
+
+
+.carousel-fade .carousel-inner .next,
+.carousel-fade .carousel-inner .prev,
+.carousel-fade .carousel-inner .active.left,
+.carousel-fade .carousel-inner .active.right {
+  left: 0;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+}
+.carousel-fade .carousel-control {
+  z-index: 2;
+}
+
+.carousel-control.right{
+    background-image: none !important;
+    padding-top: 21%;
+}
+
+.carousel-control.left{
+    background-image: none !important;
+    padding-top: 21%;
+}
+
+.leftic{
+    transform: rotate(180deg);
+    width: 50px;
+}
+
+.rightic{
+    width: 50px;
+}
+html,
+body,
+.carousel,
+.carousel-inner,
+.carousel-inner .item {
+  height: 100%;
+}
+.carousel-inner>.item>a>img, .carousel-inner>.item>img, .img-responsive, .thumbnail a>img, .thumbnail>img{width: 100%;}*/
+
+.fader{
+    position: relative;
+    padding-top: 0;
+    height: 100vh;
+    overflow: hidden;
+} 
+ 
+.fader .slide{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    z-index: 1;
+    opacity: 0;
+}
+ 
+.fader img.slide{
+    height: 100vh;
+    object-fit: cover;
+}
+
+.fader .prev,
+.fader .next{
+  position: absolute;
+  height: 80px;
+  line-height: 55px;
+  width: 50px;
+  font-size: 100px;
+  text-align: center;
+  color: #fff;
+  top: 50%;
+  left: 20px;
+  z-index: 4;
+  margin-top: -25px;
+  cursor: pointer;
+  opacity: .7;
+  transition: all 150ms;
+}
+
+.fader .prev:hover,
+.fader .next:hover{
+  opacity: 1;
+}
+
+.fader .next{
+  left: auto;
+  right: 60px;
+}
+
+.fader .pager_list{
+  position: absolute;
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  bottom: 0;
+  text-align: center;
+  z-index: 4;
+}
+
+.fader .pager_list li,.fader .page li{
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  margin: 0 7px;
+  background: #fff;
+  opacity: .7;
+  text-indent: -999px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 150ms;
+}
+
+.fader .pager_list li:hover,
+.fader .pager_list li.active{
+  opacity: 1;
+}
+
+.page img {
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+}
+
+.prev.rotet img {
+    transform: rotate(180deg);
+}
+</style>
+
+<body>
+  
+    <div class="all_page_class_mediafarm">
+       <div class="home_page_mediafarm">
+          <div class="nav">
+          <div class="nav-header">
+            <div class="nav-title left_part_logo">
+              <img src="images/logo_img.png">
+            </div>
+        </div>
+        <div class="nav-btn">
+          <label for="nav-check">
+            <span></span>
+            <span></span>
+            <span></span>
+          </label>
+        </div>
+        <input type="checkbox" id="nav-check">
+        <div class="nav-links">
+          <a class="menu" href="#section1">About</a>
+          <a class="menu" href="#section2">Contact</a>
+        </div>
+        <script src="js/jquery.pagenav.js"></script>
+        <script>
+            $(document).ready(function ()
+            {
+                $('a.menu').pageNav({'scroll_shift': $('.menu').outerHeight() + 0});
+            });
+        </script>
+      </div>  
+
+
+         <div class="main_slider">
+           <!-- <div id="carousel" class="carousel slide carousel-fade" data-ride="carousel" data-interval="2500">
+            <ol class="carousel-indicators">
+                <li data-target="#carousel" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel" data-slide-to="1"></li>
+            </ol>
+             Carousel items 
+            <div class="carousel-inner">
+                <div class="active item">
+                  <img src="images/slider_1_img.png">
+                </div>
+                <div class="item">
+                  <img src="images/slider_2_img.png">
+                </div>
+            </div> 
+
+             Carousel nav 
+            <a class="carousel-control left" href="#carousel" data-slide="prev"><img src="images/new_arow.png" class="leftic" style=""></a>
+            <a class="carousel-control right" href="#carousel" data-slide="next"><img src="images/new_arow.png" class="rightic"></a> -->
+            
+            <div id="Fader" class="fader"> 
+              <img class="slide" src="images/slider_1_img.png"/> 
+              <img class="slide" src="images/slider_3.jpg"/> 
+            <div class="fader_controls">
+            <div class="page prev rotet" data-target="prev"><img src="images/new_arow.png"></div>
+            <div class="page next" data-target="next"><img src="images/new_arow.png"></div>
+            </div>
+            </div>
+
+            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> 
+            <script src="js/slideshow.js"></script>
+            <script type="text/javascript">
+              var _gaq = _gaq || [];
+              _gaq.push(['_setAccount', 'UA-36251023-1']);
+              _gaq.push(['_setDomainName', 'jqueryscript.net']);
+              _gaq.push(['_trackPageview']);
+
+              (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+              })();
+            </script>
+             
+
+              <div class="cooming_soon_part">
+                 <div class="background_coming_soon">
+                     <p><span><img src="images/brush_icon.png"></span>New website is coming soon!</p>
+                
+                 </div>  
+              </div>
+          
+            </div>
+            
+             <div class="bottem_aroow">
+               <a class="ct-btn-scroll ct-js-btn-scroll" href="#section2"><img alt="Arrow Down Icon" src="images/dawon_arow.png"></a>
+               <script>
+                $(document).ready(function(){
+                  $("a.ct-btn-scroll").on('click', function(event) {
+                    if (this.hash !== "") {
+                      event.preventDefault();
+                      var hash = this.hash;
+                      $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                      }, 800, function(){
+                        window.location.hash = hash;
+                      });
+                    } 
+                  });
+                });
+                </script>
+             </div> 
+          </div>  
+
+          <div class="page_contant">
+             <div class="first_about_part" id="section1">
+                <div class="left_images_part">
+                   <div class="img_width_part">
+                      <img src="images/contant_img_1.png">
+                   </div>
+                </div>  
+
+                <div class="right_contant_part_about">
+                    <div class="contant_width_part">
+                       <h2>About</h2>
+                       <p><b>Lorem ipsum dolor sit amet, ius altera quidam et. Id utamur salutatus mei, est cu enim equidem propriae. Ex vitae gloriatur mediocritatem mel, mazim scripserit accommodare eu has.</b> <br> 
+Vim nostrum assueverit ne. Te eligendi efficiantur est, ei quod case causae pri. Autem patrioque ius eu, id ius ornatus debitis. An sea prodesset percipitur, has te ignota corrumpit conceptam. Summo timeam aliquam per cu.
+Ad eos suscipit apeirian explicari, per no rebum nullam deleniti. Autem veniam platonem at est, no altera lobortis per, qui decore adipisci inimicus ex.
+</p>
+                    </div>  
+                </div>  
+             </div> 
+
+
+
+             <div class="secound_contact_part" id="section2">
+                <div class="right_contant_part_about">
+                    <div class="contant_width_part">
+                       <h2>Contact</h2>
+                       
+                       <div class="contact mobile">
+                          <span>Mobile</span>
+                          <h3>054.587.5463</h3>
+                       </div>
+
+                       <div class="contact mobile contact_email">
+                          <span>Email</span>
+                          <h3>michal@gelbart.co.il</h3>
+                       </div>
+                    </div>  
+
+                </div>  
+
+                <div class="left_images_part">
+                   <div class="img_width_part">
+                      <img src="images/contant_img_2.png">
+                   </div>
+                </div> 
+             </div> 
+
+
+
+          </div> 
+
+       </div>
+    </div>  
+
+</body>
+
+
+</html>
